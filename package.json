@@ -5,12 +5,14 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "?.git"
+    "url": "https://github.com/rieye/workflows.git"
   },
   "author": "Kris Blackthorn",
   "license": "ISC",
   "devDependencies": {
+    "coffeescript": "^2.1.1",
     "gulp": "^3.9.1",
+    "gulp-coffee": "^3.0.2",
     "gulp-util": "^3.0.8"
   }
 }
