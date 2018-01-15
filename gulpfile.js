@@ -42,3 +42,5 @@ gulp.task('compass', function() {
 		.pipe(gulp.dest('builds/development/css'))
 		.pipe(cleanDest("css"))
 });
+
+gulp.task('default', ['coffee', 'js', 'compass']);
