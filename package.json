@@ -13,8 +13,11 @@
     "coffeescript": "^2.1.1",
     "gulp": "^3.9.1",
     "gulp-browserify": "^0.5.1",
+    "gulp-clean-dest": "^0.2.0",
     "gulp-coffee": "^3.0.2",
+    "gulp-compass": "^2.1.0",
     "gulp-concat": "^2.6.1",
+    "gulp-ruby-sass": "^3.0.0",
     "gulp-util": "^3.0.8",
     "jquery": "^3.2.1",
     "mustache": "^2.3.0"
