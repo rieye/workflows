@@ -5,6 +5,8 @@ var gulp = require('gulp'),
 	compass = require('gulp-compass'),
 	concat = require('gulp-concat'),
 	cleanDest = require('gulp-clean-dest'),
+	gulpIf = require('gulp-if'),
+	uglify = require('gulp-uglifyes'),
 	sass = require('gulp-ruby-sass'),
 	connect = require('gulp-connect')
 	;
@@ -18,7 +20,7 @@ var env,
 	jsonSources,
 	outputDir
 	;
-env = process.env.NODE_ENV || 'development';
+env = process.env.NODE_ENV || 'production';
 
 if (env === 'development') {
 	outputDir = 'builds/development/';
@@ -50,6 +52,10 @@ gulp.task('js', function() {
 	gulp.src(jsSources)
 		.pipe(concat('script.js'))
 		.pipe(browserify())
+		.pipe(gulpIf(env === 'production', uglify({
+			mangle: false,
+			ecma: 6
+		})))
 		.pipe(gulp.dest(outputDir + 'js'))
 		.pipe(connect.reload())
 });
